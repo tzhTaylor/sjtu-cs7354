@@ -1,0 +1,49 @@
+任务一
+    git checkout -b feature-newFunc
+    git add .
+    git commit -m 'Added diary entry for feature work'
+    git add .
+    git commit -m 'Added another diary entry for feature work'
+    git rebase -i HEAD~2
+    git checkout main
+    git merge feature-newFunc
+
+
+任务二
+    git checkout experiment
+    git log
+    git checkout main
+    git cherry-pick d58314c014e17c0f8091e4f715836e14815e443d
+    git push origin main
+
+
+任务三
+    git checkout dev
+    git revert HEAD~1
+    (解决冲突)
+    git add .
+    git commit -m 'Revert to second commit'
+    git push origin dev
+
+任务四
+    git checkout main
+    git add .
+    git commit -m 'Change font family'
+    git checkout feature-upload
+    git diff main
+    git checkout main
+    git merge feature-upload
+    (解决冲突)
+    git add .
+    git commit -m 'Merge feature-upload to main'
+
+任务五
+    git checkout documentation
+    git rebase -i HEAD~4
+        1 pick 2fc2e17 Add contributing guide
+        2 pick 1d3dee7 Update project overview with new feature description
+        3 squash 9caa536 Fix description in project overview
+        4 pick 9cf2a7d Add installation guide
+    git checkout main
+    git merge documentation
+    git push origin main
